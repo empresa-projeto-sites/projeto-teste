@@ -268,6 +268,150 @@ main {
     font-size: 0.8rem;
 }
 
+/* Case Cards */
+.case-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.case-number {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(6, 182, 212, 0.1);
+    z-index: 0;
+}
+
+.case-card h3 {
+    position: relative;
+    z-index: 1;
+}
+
+.case-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.result-badge {
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid var(--accent-green);
+    color: var(--accent-green);
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Tecnologias Stack */
+.tech-stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.tech-category {
+    background: var(--gradient-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.tech-category:hover {
+    border-color: var(--accent-blue);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 15px var(--glow-color);
+}
+
+.tech-category h4 {
+    color: var(--accent-green);
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.tech-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.tech-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-highlight);
+    color: var(--text-secondary);
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.tech-item:hover {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--accent-green);
+    border-color: var(--accent-green);
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(16, 185, 129, 0.1) 100%);
+    border: 2px solid var(--border-highlight);
+    border-radius: 16px;
+    padding: 3.5rem 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    backdrop-filter: blur(8px);
+}
+
+.cta-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.cta-content p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid var(--accent-blue);
+    color: var(--accent-blue);
+    font-weight: 700;
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--accent-blue);
+    color: #040810;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+}
+
 /* Rodapé */
 footer {
     background: #05080e;
@@ -304,14 +448,24 @@ footer {
     .grid-2, .grid-3 {
         grid-template-columns: 1fr;
     }
+    .cta-buttons {
+        flex-direction: column;
+    }
+    .cta-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+    .cta-content h2 {
+        font-size: 1.5rem;
+    }
 }
 /* BOTÃO FLUTUANTE DE CONTATO (CANTO INFERIOR DIREITO) */
 .btn-flutuante {
     position: fixed;
     bottom: 25px;
     right: 25px;
-    background-color: var(--primary-color, #0066cc); /* Cor principal do seu site */
-    color: #ffffff;
+    background: var(--gradient-primary);
+    color: #040810;
     padding: 14px 22px;
     border-radius: 50px;
     font-weight: 700;
@@ -320,16 +474,14 @@ footer {
     display: flex;
     align-items: center;
     gap: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    z-index: 9999; /* Garante que fique acima de outros elementos */
-    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 20px var(--glow-color);
+    z-index: 9999;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-flutuante:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
-    background-color: var(--primary-color-hover, #0052a3);
-    color: #ffffff;
+    box-shadow: 0 6px 30px rgba(16, 185, 129, 0.4);
 }
 
 /* Ajuste para telas pequenas/celulares */
