@@ -1,12 +1,383 @@
-<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Entre em contato com a Ebensystem Tecnologia para demandas de infraestrutura e operações de TI."><title>Ebensystem Tecnologia | Contato</title><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></head><body>
-<header><a href="index.html" class="logo-container"><img src="img/logo.png" alt="Ebensystem Tecnologia" class="logo-img"></a><button class="menu-toggle" aria-label="Abrir menu"><i class="fa-solid fa-bars"></i></button><nav><ul><li><a href="index.html">Início</a></li><li><a href="servicos.html">Serviços</a></li><li><a href="clientes.html">Como atuamos</a></li><li><a href="historia.html">A empresa</a></li><li><a class="active nav-cta" href="contato.html">Fale conosco</a></li></ul></nav></header>
-<main><section class="page-hero"><span class="eyebrow">Contato comercial</span><h1>Vamos conversar sobre sua operação de TI.</h1><p>Conte o que sua empresa precisa. Podemos avaliar o ambiente, a atividade e o perfil técnico necessário para o projeto.</p></section>
-<section class="section" style="padding-top:1rem"><div class="contact-grid"><div class="card contact-info"><span class="section-kicker">Ebensystem Tecnologia</span><h2>Fale diretamente com nossa equipe.</h2><p class="muted">Use o formulário para apresentar sua necessidade ou envie um e-mail para nosso contato comercial.</p><div class="contact-item"><i class="fa-solid fa-envelope"></i><span>contato@ebensystem.com.br</span></div><div class="contact-item"><i class="fa-solid fa-globe"></i><span>www.ebensystem.com.br</span></div><div class="contact-item"><i class="fa-solid fa-server"></i><span>Infraestrutura • Operações • Segurança • Automação</span></div></div>
-<div class="card form-card"><form id="contatoForm"><div class="field"><label for="nome">Nome completo</label><input type="text" id="nome" name="nome" placeholder="Seu nome" required></div><div class="field"><label for="empresa">Empresa</label><input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required></div><div class="field"><label for="email">E-mail corporativo</label><input type="email" id="email" name="email" placeholder="nome@empresa.com.br" required></div><div class="field"><label for="telefone">WhatsApp / Telefone</label><input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required></div><div class="field"><label for="mensagemInput">Como podemos ajudar?</label><textarea id="mensagemInput" name="mensagem" rows="6" placeholder="Descreva brevemente a necessidade de infraestrutura ou operações de TI" required></textarea></div><button type="submit" id="botaoEnviar" class="btn-primary" style="width:100%;border:0"><i class="fa-solid fa-paper-plane"></i> Enviar mensagem</button><div id="mensagemStatus" style="display:none;margin-top:1rem;padding:1rem;border-radius:10px;text-align:center;font-size:.9rem"></div></form></div></div></section></main>
-<footer><div class="footer-content"><a href="index.html" class="logo-container"><img src="img/logo.png" alt="Ebensystem Tecnologia" class="logo-img"></a><p class="footer-mail">contato@ebensystem.com.br</p></div><div class="footer-bottom">© 2026 Ebensystem Tecnologia LTDA • www.ebensystem.com.br</div></footer>
-<a href="contato.html" class="btn-flutuante"><i class="fa-solid fa-paper-plane"></i><span>Fale conosco</span></a>
-<script src="app.js"></script><script>
-const URL_GOOGLE_SCRIPT="https://script.google.com/macros/s/AKfycbxbaqxP5i2WHzeRXm_CP9tS21ItWK4qnkqc0J8f_REmZSvTwFLXLMEnH2UUDY3efSYDhw/exec";
-const formulario=document.getElementById("contatoForm"),botao=document.getElementById("botaoEnviar"),status=document.getElementById("mensagemStatus");
-formulario.addEventListener("submit",function(event){event.preventDefault();const dados={nome:document.getElementById("nome").value.trim(),empresa:document.getElementById("empresa").value.trim(),email:document.getElementById("email").value.trim(),telefone:document.getElementById("telefone").value.trim(),mensagem:document.getElementById("mensagemInput").value.trim()};botao.disabled=true;botao.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';status.style.display="none";fetch(URL_GOOGLE_SCRIPT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify(dados)}).then(()=>{status.style.display="block";status.style.background="rgba(25,227,122,.09)";status.style.border="1px solid rgba(25,227,122,.3)";status.style.color="#aaffcc";status.innerHTML="✓ Solicitação enviada. Em breve entraremos em contato.";formulario.reset()}).catch(()=>{status.style.display="block";status.style.background="rgba(255,80,80,.08)";status.style.border="1px solid rgba(255,100,100,.3)";status.style.color="#ffbaba";status.textContent="Não foi possível enviar a mensagem. Tente novamente mais tarde."}).finally(()=>{botao.disabled=false;botao.innerHTML='<i class="fa-solid fa-paper-plane"></i> Enviar mensagem'})});
-</script></body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Clientes | Ebensystem Tecnologia</title>
+
+    <meta name="description"
+          content="Soluções e serviços de tecnologia da Ebensystem para empresas.">
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+
+<body>
+
+<header class="site-header">
+
+    <div class="header-container">
+
+        <a href="index.html"
+           class="logo-container">
+
+            <img src="img/logo.png"
+                 alt="Ebensystem Tecnologia"
+                 class="logo-img">
+
+        </a>
+
+
+        <nav class="main-nav">
+
+            <a href="index.html">
+                Início
+            </a>
+
+            <a href="servicos.html">
+                Serviços
+            </a>
+
+            <a href="historia.html">
+                A Empresa
+            </a>
+
+            <a href="clientes.html"
+               class="active">
+                Clientes
+            </a>
+
+            <a href="contato.html"
+               class="nav-contact">
+                Contato
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="page-hero">
+
+    <span class="section-label">
+        SOLUÇÕES PARA EMPRESAS
+    </span>
+
+    <h1>
+        Sua necessidade de TI.
+        <span>Nossa especialidade.</span>
+    </h1>
+
+    <p>
+        A Ebensystem trabalha para empresas que precisam
+        reforçar, estruturar ou evoluir suas operações de TI.
+    </p>
+
+</section>
+
+
+<section class="section">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            ONDE PODEMOS ATUAR
+        </span>
+
+        <h2>
+            Diferentes necessidades. Uma estrutura técnica.
+        </h2>
+
+    </div>
+
+
+    <div class="services-grid">
+
+
+        <article class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+
+            <h3>
+                Equipes de TI
+            </h3>
+
+            <p>
+                Profissionais estruturados para atuar em atividades
+                específicas de infraestrutura e operações.
+            </p>
+
+        </article>
+
+
+        <article class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-server"></i>
+            </div>
+
+            <h3>
+                Operações
+            </h3>
+
+            <p>
+                Apoio à execução de atividades operacionais
+                do ambiente tecnológico.
+            </p>
+
+        </article>
+
+
+        <article class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <h3>
+                Segurança
+            </h3>
+
+            <p>
+                Patches, adequações e atividades relacionadas
+                à segurança operacional.
+            </p>
+
+        </article>
+
+
+        <article class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-gears"></i>
+            </div>
+
+            <h3>
+                Sustentação
+            </h3>
+
+            <p>
+                Apoio técnico para manter aplicações
+                e infraestrutura em operação.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<section class="section section-dark">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            NOSSO OBJETIVO
+        </span>
+
+        <h2>
+            Ser uma extensão da sua operação de TI.
+        </h2>
+
+        <p>
+            A Ebensystem busca atuar de forma integrada à necessidade
+            do cliente, oferecendo profissionais e conhecimento técnico
+            para execução das atividades contratadas.
+        </p>
+
+    </div>
+
+
+    <div class="client-flow">
+
+        <div class="flow-step">
+
+            <span>01</span>
+
+            <strong>
+                Sua empresa
+            </strong>
+
+            <small>
+                Identifica uma necessidade
+            </small>
+
+        </div>
+
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+
+        <div class="flow-step">
+
+            <span>02</span>
+
+            <strong>
+                Ebensystem
+            </strong>
+
+            <small>
+                Entende o projeto
+            </small>
+
+        </div>
+
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+
+        <div class="flow-step">
+
+            <span>03</span>
+
+            <strong>
+                Equipe especializada
+            </strong>
+
+            <small>
+                Executa as atividades
+            </small>
+
+        </div>
+
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+
+        <div class="flow-step">
+
+            <span>04</span>
+
+            <strong>
+                Resultado
+            </strong>
+
+            <small>
+                Operação mais eficiente
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="cta-section">
+
+    <div>
+
+        <span class="section-label">
+            FALE COM A EBENSYSTEM
+        </span>
+
+        <h2>
+            Tem uma necessidade de infraestrutura?
+        </h2>
+
+        <p>
+            Vamos conversar sobre o seu ambiente.
+        </p>
+
+    </div>
+
+
+    <a href="contato.html"
+       class="btn-primary">
+
+        Fale conosco
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-container">
+
+        <div>
+
+            <img src="img/logo.png"
+                 alt="Ebensystem Tecnologia"
+                 class="footer-logo">
+
+            <p>
+                Tecnologia que sustenta seu negócio.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>
+                Empresa
+            </h4>
+
+            <a href="historia.html">
+                A Empresa
+            </a>
+
+            <a href="servicos.html">
+                Serviços
+            </a>
+
+            <a href="contato.html">
+                Contato
+            </a>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <h4>
+                Contato
+            </h4>
+
+            <a href="mailto:contato@ebensystem.com.br">
+                contato@ebensystem.com.br
+            </a>
+
+            <span>
+                www.ebensystem.com.br
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 Ebensystem Tecnologia LTDA.
+        Todos os direitos reservados.
+
+    </div>
+
+</footer>
+
+</body>
+</html>
