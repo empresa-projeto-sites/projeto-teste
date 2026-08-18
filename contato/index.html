@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="Entre em contato com a Ebensystem Tecnologia para demandas de infraestrutura e opera&ccedil;&otilde;es de TI." name="description"/>
+  <title>
+   Ebensystem Tecnologia | Contato
+  </title>
+  <link href="../css/style.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <header>
+   <a class="logo-container" href="../">
+    <img alt="Ebensystem Tecnologia" class="logo-img" src="../img/logo.png"/>
+   </a>
+   <button aria-expanded="false" aria-label="Abrir menu" class="menu-toggle" type="button">
+    <i class="fa-solid fa-bars">
+    </i>
+   </button>
+   <nav>
+    <ul>
+     <li>
+      <a href="../">
+       In&iacute;cio
+      </a>
+     </li>
+     <li>
+      <a href="../servicos/">
+       Servi&ccedil;os
+      </a>
+     </li>
+     <li>
+      <a href="../clientes/">
+       Como atuamos
+      </a>
+     </li>
+     <li>
+      <a href="../historia/">
+       A empresa
+      </a>
+     </li>
+     <li>
+      <a aria-current="page" class="active nav-cta" href="../contato/">
+       Fale conosco
+      </a>
+     </li>
+    </ul>
+   </nav>
+  </header>
+  <main>
+   <section class="page-hero">
+    <span class="eyebrow">
+     Contato comercial
+    </span>
+    <h1>
+     Vamos conversar sobre sua opera&ccedil;&atilde;o de TI.
+    </h1>
+    <p>
+     Conte o que sua empresa precisa. Podemos avaliar o ambiente, a atividade e o perfil t&eacute;cnico necess&aacute;rio para o projeto.
+    </p>
+   </section>
+   <section class="section" style="padding-top:1rem">
+    <div class="contact-grid">
+     <div class="card contact-info">
+      <span class="section-kicker">
+       Ebensystem Tecnologia
+      </span>
+      <h2>
+       Fale diretamente com nossa equipe.
+      </h2>
+      <p class="muted">
+       Use o formul&aacute;rio para apresentar sua necessidade ou envie um e-mail para nosso contato comercial.
+      </p>
+      <div class="contact-item">
+       <i class="fa-solid fa-envelope">
+       </i>
+       <span>
+        contato@ebensystem.com.br
+       </span>
+      </div>
+      <div class="contact-item">
+       <i class="fa-solid fa-globe">
+       </i>
+       <span>
+        www.ebensystem.com.br
+       </span>
+      </div>
+      <div class="contact-item">
+       <i class="fa-solid fa-server">
+       </i>
+       <span>
+        Infraestrutura &bull; Opera&ccedil;&otilde;es &bull; Seguran&ccedil;a &bull; Automa&ccedil;&atilde;o
+       </span>
+      </div>
+     </div>
+     <div class="card form-card">
+      <form id="contatoForm">
+       <div class="field">
+        <label for="nome">
+         Nome completo
+        </label>
+        <input autocomplete="name" id="nome" name="nome" placeholder="Seu nome" required="" type="text"/>
+       </div>
+       <div class="field">
+        <label for="empresa">
+         Empresa
+        </label>
+        <input autocomplete="organization" id="empresa" name="empresa" placeholder="Nome da empresa" required="" type="text"/>
+       </div>
+       <div class="field">
+        <label for="email">
+         E-mail corporativo
+        </label>
+        <input autocomplete="email" id="email" name="email" placeholder="nome@empresa.com.br" required="" type="email"/>
+       </div>
+       <div class="field">
+        <label for="telefone">
+         WhatsApp / Telefone
+        </label>
+        <input autocomplete="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required="" type="tel"/>
+       </div>
+       <div class="field">
+        <label for="mensagemInput">
+         Como podemos ajudar?
+        </label>
+        <textarea id="mensagemInput" name="mensagem" placeholder="Descreva brevemente a necessidade de infraestrutura ou opera&ccedil;&otilde;es de TI" required="" rows="6"></textarea>
+       </div>
+       <button class="btn-primary" id="botaoEnviar" style="width:100%;border:0" type="submit">
+        <i class="fa-solid fa-paper-plane">
+        </i>
+        Enviar mensagem
+       </button>
+       <div id="mensagemStatus" style="display:none;margin-top:1rem;padding:1rem;border-radius:10px;text-align:center;font-size:.9rem">
+       </div>
+      </form>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer>
+   <div class="footer-content">
+    <a class="logo-container" href="../">
+     <img alt="Ebensystem Tecnologia" class="logo-img" src="../img/logo.png"/>
+    </a>
+    <p class="footer-mail">
+     contato@ebensystem.com.br
+    </p>
+   </div>
+   <div class="footer-bottom">
+    &copy; 2026 Ebensystem Tecnologia LTDA &bull; www.ebensystem.com.br
+   </div>
+  </footer>
+  <a class="btn-flutuante" href="../contato/">
+   <i class="fa-solid fa-paper-plane">
+   </i>
+   <span>
+    Fale conosco
+   </span>
+  </a>
+  <script src="../app.js">
+  </script>
+  <script>
+   const URL_GOOGLE_SCRIPT="https://script.google.com/macros/s/AKfycbxbaqxP5i2WHzeRXm_CP9tS21ItWK4qnkqc0J8f_REmZSvTwFLXLMEnH2UUDY3efSYDhw/exec";
+const formulario=document.getElementById("contatoForm"),botao=document.getElementById("botaoEnviar"),status=document.getElementById("mensagemStatus");
+formulario.addEventListener("submit",function(event){event.preventDefault();const dados={nome:document.getElementById("nome").value.trim(),empresa:document.getElementById("empresa").value.trim(),email:document.getElementById("email").value.trim(),telefone:document.getElementById("telefone").value.trim(),mensagem:document.getElementById("mensagemInput").value.trim()};botao.disabled=true;botao.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Enviando...';status.style.display="none";fetch(URL_GOOGLE_SCRIPT,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify(dados)}).then(()=>{status.style.display="block";status.style.background="rgba(25,227,122,.09)";status.style.border="1px solid rgba(25,227,122,.3)";status.style.color="#aaffcc";status.innerHTML="✓ Solicitação enviada. Em breve entraremos em contato.";formulario.reset()}).catch(()=>{status.style.display="block";status.style.background="rgba(255,80,80,.08)";status.style.border="1px solid rgba(255,100,100,.3)";status.style.color="#ffbaba";status.textContent="Não foi possível enviar a mensagem. Tente novamente mais tarde."}).finally(()=>{botao.disabled=false;botao.innerHTML='<i class="fa-solid fa-paper-plane"></i> Enviar mensagem'})});
+  </script>
+ </body>
+</html>
